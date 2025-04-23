@@ -1,0 +1,213 @@
+    <!--C:\Users\Abbas Satwr\Desktop\مشاريعي\عقاري\index.html -->
+    <!DOCTYPE html>
+    <html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Home - منصة عقارات النخبة</title>
+    
+        <!-- الروابط الخارجية -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- ملف الأنماط المخصصة -->
+        <link rel="stylesheet" href="real_estate.css">
+    </head>
+    <body>
+    
+        <!-- شريط التنقل -->
+        <nav class="navbar main-nav navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand nav-brand" href="#">
+                    <img src="logo.png"
+                         alt="شعار Our Home"
+                         class="navbar-brand-logo">
+                </a>
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html"> الرئيسية </a></li>
+                        <li class="nav-item"><a href="properties/properties.html" class="nav-link">العقارات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="agents/agents.html">الوكلاء</a></li>
+                        <li class="nav-item"><a href="about_us/about_us.html" class="nav-link">عن الشركة</a></li>
+                        <li class="nav-item"><a href="add_property_agent/add_property_agent.html" class="nav-link">إضافة عقار</a></li>
+                    </ul>
+                    <a href="login/login.html" class="btn btn-primary me-2">تسجيل دخول</a>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- قسم البطل -->
+        <section class="hero-section" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container h-100 d-flex align-items-center">
+                <div class="hero-content text-center animate-fade">
+                    <h1 class="display-3 mb-4">اكتشف منزلك المثالي مع Our Home</h1>
+                    <p class="lead mb-5">أفضل العروض العقارية المميزة في المنطقة بأفضل الأسعار</p>
+    
+                    <!-- نموذج البحث -->
+                    <div class="hero-search-box animate-fade" style="animation-delay: 0.3s;">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <select class="form-select">
+                                    <option>نوع العقار</option>
+                                    <option>فيلا</option>
+                                    <option>شقة</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="الموقع المطلوب">
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary w-100">ابحث الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- فلترة العقارات -->
+        <section class="filter-section container animate-fade" style="animation-delay: 0.5s;">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-3">
+                    <h5 class="mb-0">تصفية النتائج:</h5>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" class="form-control" placeholder="الحد الأدنى للسعر">
+                </div>
+                <div class="col-md-3">
+                    <input type="number" class="form-control" placeholder="الحد الأقصى للسعر">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100">تطبيق الفلتر</button>
+                </div>
+            </div>
+        </section>
+    
+        <!-- قائمة العقارات -->
+        <section id="properties" class="container py-5">
+            <div class="row g-4" id="propertiesContainer">
+                <!-- العقار 1 -->
+                <div class="col-md-4 animate-fade">
+                    <div class="property-card">
+                        <div class="position-relative">
+                            <img src="الصور/تصوير-العقارات-7.webp"
+                                 class="property-image w-100" 
+                                 alt="عقار مميز في قلب المدينة">
+                            <div class="property-badge">عرض خاص</div>
+                        </div>
+                        <div class="p-3">
+                            <h4 class="text-primary">ڤيلا فاخرة بتشطيب سوبر لوكس</h4>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p class="text-muted"><i class="fas fa-map-marker-alt"></i> حي النخيل، الرياض</p>
+                                <p class="text-primary fw-bold">8,500,000 ر.س</p>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-4">
+                                    <div class="bg-light p-2 text-center rounded">
+                                        <small class="d-block">المساحة</small>
+                                        <strong>450م²</strong>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="bg-light p-2 text-center rounded">
+                                        <small class="d-block">الغرف</small>
+                                        <strong>5</strong>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="bg-light p-2 text-center rounded">
+                                        <small class="d-block">الحمامات</small>
+                                        <strong>4</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100">تفاصيل العقار</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- العقار 2 -->
+                <div class="col-md-4 animate-fade" style="animation-delay: 0.2s;">
+                    <div class="property-card">
+                        <div class="position-relative">
+                            <img src="الصور/تصوير-العقارات-7.webp"
+                                 class="property-image w-100" 
+                                 alt="شقة حديثة باطلالة بانورامية">
+                            <div class="property-badge">عرض جديد</div>
+                        </div>
+                        <div class="p-3">
+                            <h4 class="text-primary">شقة حديثة في برج سكني</h4>
+                            <div class="d-flex justify-content-between mb-3">
+                                <p class="text-muted"><i class="fas fa-map-marker-alt"></i> حي السفارات، جدة</p>
+                                <p class="text-primary fw-bold">3,200,000 ر.س</p>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-4">
+                                    <div class="bg-light p-2 text-center rounded">
+                                        <small class="d-block">المساحة</small>
+                                        <strong>220م²</strong>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="bg-light p-2 text-center rounded">
+                                        <small class="d-block">الغرف</small>
+                                        <strong>3</strong>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="bg-light p-2 text-center rounded">
+                                        <small class="d-block">الحمامات</small>
+                                        <strong>2</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100">تفاصيل العقار</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- ... المزيد من العقارات ... -->
+            </div>
+        </section>
+    
+        <!-- قسم الوكلاء -->
+        <section id="agents" class="bg-light py-5">
+            <div class="container" id="agentsContainer">
+                <h2 class="text-center mb-5">وكلاؤنا المعتمدون</h2>
+                <div class="row g-4">
+                    <!-- الوكيل 1 -->
+                    <div class="col-md-3 animate-fade">
+                        <div class="agent-card text-center p-3">
+                            <img src="الصور/Screenshot_٢٠٢٥٠٣٢٠-١٣٢٠٣٣.png"
+                                 class="rounded-circle mb-3 w-75 mx-auto" 
+                                 alt="الوكيل العقاري ميريام">
+                            <h5 class="mb-2">ميريام عبد المسيح</h5>
+                            <div class="text-warning mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <button class="btn btn-outline-primary w-100">اتصل الآن</button>
+                        </div>
+                    </div>
+    
+                    <!-- ... المزيد من الوكلاء ... -->
+                </div>
+            </div>
+        </section>
+    
+        <!-- ملف السكربتات -->
+        <script type="module" src="real_estate.js"></script>
+    </body>
+    </html>

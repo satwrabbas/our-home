@@ -1,0 +1,226 @@
+ <!--C:\Users\Abbas Satwr\Desktop\مشاريعي\عقاري\agents\add_agents.html -->
+ <!DOCTYPE html>
+ <html lang="ar" dir="rtl">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Our Home - المنصة العقارية المتكاملة</title>
+     
+     <!-- الروابط الخارجية -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+     <!-- ملف الأنماط المخصصة -->
+     <style>
+     :root {
+         --primary-color: #8A2BE2;
+         --secondary-color: #FFFFFF;
+         --accent-color: #FFD700;
+         --dark-color: #2A0944;
+         --gradient-overlay: linear-gradient(45deg, rgba(138,43,226,0.9), rgba(42,9,68,0.8));
+         --font-heading: 'El Messiri', sans-serif;
+         --font-body: 'Tajawal', sans-serif;
+         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+         --shadow: 0 10px 30px rgba(0,0,0,0.15);
+     }
+ 
+     body {
+         font-family: var(--font-body);
+         background: var(--secondary-color);
+         color: var(--dark-color);
+         line-height: 1.8;
+     }
+ 
+     /* أنماط شريط التنقل */
+     .main-nav {
+         background: rgba(255,255,255,0.97) !important;
+         backdrop-filter: blur(10px);
+         box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+     }
+ 
+     /* أنماط بطاقات الوكلاء */
+     .agent-card {
+         border: 2px solid var(--primary-color);
+         border-radius: 20px;
+         transition: var(--transition);
+     }
+ 
+     .agent-card:hover {
+         transform: translateY(-5px);
+         box-shadow: var(--shadow);
+     }
+ 
+     .agent-avatar {
+         width: 120px;
+         height: 120px;
+         border: 3px solid var(--primary-color);
+     }
+ 
+     /* نموذج إضافة وكيل */
+     .add-agent-form {
+         background: rgba(255,255,255,0.95);
+         border-radius: 20px;
+         backdrop-filter: blur(10px);
+     }
+ 
+     /* أنماط البحث */
+     .search-box {
+         border-radius: 30px;
+         border: 2px solid var(--primary-color);
+     }
+     </style>
+ </head>
+ <body>
+ 
+     <!-- شريط التنقل -->
+     <nav class="navbar main-nav navbar-expand-lg fixed-top">
+         <div class="container">
+             <a class="navbar-brand" href="#">
+                 <img src="logo.png" alt="شعار الموقع" width="100">
+             </a>
+             
+             <div class="collapse navbar-collapse" id="mainNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#agents">الوكلاء</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#add-agent">إضافة وكيل</a></li>
+                 </ul>
+             </div>
+         </div>
+     </nav>
+ 
+     <!-- قسم إضافة الوكلاء -->
+     <section id="add-agent" class="container py-5 mt-5">
+         <div class="add-agent-form p-4 shadow">
+             <h3 class="text-center mb-4"><i class="fas fa-user-plus me-2"></i>إضافة وكيل جديد</h3>
+             
+             <form id="agentForm">
+                 <div class="row g-3">
+                     <div class="col-md-6">
+                         <input type="text" class="form-control" placeholder="الاسم الكامل" required>
+                     </div>
+                     <div class="col-md-6">
+                         <input type="tel" class="form-control" placeholder="رقم الجوال" required>
+                     </div>
+                     <div class="col-md-6">
+                         <input type="email" class="form-control" placeholder="البريد الإلكتروني" required>
+                     </div>
+                     <div class="col-md-6">
+                         <select class="form-select" required>
+                             <option value="">التخصص</option>
+                             <option>عقارات سكنية</option>
+                             <option>عقارات تجارية</option>
+                             <option>استثمار عقاري</option>
+                         </select>
+                     </div>
+                     <div class="col-12">
+                         <button type="submit" class="btn btn-primary w-100">
+                             <i class="fas fa-save me-2"></i>حفظ الوكيل
+                         </button>
+                     </div>
+                 </div>
+             </form>
+         </div>
+     </section>
+ 
+     <!-- قسم عرض الوكلاء -->
+     <section id="agents" class="container py-5">
+         <div class="row mb-4">
+             <div class="col-md-6">
+                 <div class="search-box p-2">
+                     <input type="text" class="form-control border-0" placeholder="ابحث عن وكيل...">
+                 </div>
+             </div>
+         </div>
+ 
+         <div class="row g-4" id="agentsList">
+             <!-- سيتم إضافة الوكلاء هنا عبر الجافاسكريبت -->
+         </div>
+     </section>
+ 
+     <!-- القالب المخفي لعنصر الوكيل -->
+     <template id="agentTemplate">
+         <div class="col-md-4">
+             <div class="agent-card p-3">
+                 <div class="text-center">
+                     <img src="default-avatar.jpg" class="agent-avatar rounded-circle mb-3" alt="صورة الوكيل">
+                     <h4 class="agent-name text-primary mb-1"></h4>
+                     <p class="agent-specialty text-muted small mb-3"></p>
+                     <div class="agent-contacts mb-3">
+                         <a href="#" class="btn btn-sm btn-outline-primary me-2">
+                             <i class="fas fa-phone"></i>
+                         </a>
+                         <a href="#" class="btn btn-sm btn-outline-primary">
+                             <i class="fas fa-envelope"></i>
+                         </a>
+                     </div>
+                     <button class="btn btn-primary w-100">عرض التفاصيل</button>
+                 </div>
+             </div>
+         </div>
+     </template>
+ 
+ <script>
+ // نظام إدارة الوكلاء
+ const agents = JSON.parse(localStorage.getItem('agents')) || [];
+ const agentTemplate = document.getElementById('agentTemplate');
+ const agentsList = document.getElementById('agentsList');
+ 
+ // دالة عرض الوكلاء
+ function renderAgents() {
+     agentsList.innerHTML = '';
+     agents.forEach(agent => {
+         const clone = agentTemplate.content.cloneNode(true);
+         clone.querySelector('.agent-name').textContent = agent.name;
+         clone.querySelector('.agent-specialty').textContent = agent.specialty;
+         clone.querySelector('img').src = agent.photo || 'default-avatar.jpg';
+         clone.querySelector('.btn-outline-primary').href = `tel:${agent.phone}`;
+         clone.querySelector('.btn-outline-primary:last-child').href = `mailto:${agent.email}`;
+         agentsList.appendChild(clone);
+     });
+ }
+ 
+ // معالجة إضافة وكيل
+ document.getElementById('agentForm').addEventListener('submit', (e) => {
+     e.preventDefault();
+     
+     const formData = new FormData(e.target);
+     const newAgent = {
+         id: Date.now(),
+         name: formData.get('name'),
+         phone: formData.get('phone'),
+         email: formData.get('email'),
+         specialty: formData.get('specialty'),
+         joinDate: new Date().toLocaleDateString()
+     };
+ 
+     agents.push(newAgent);
+     localStorage.setItem('agents', JSON.stringify(agents));
+     renderAgents();
+     
+     Swal.fire({
+         icon: 'success',
+         title: 'تمت الإضافة!',
+         text: 'تمت إضافة الوكيل بنجاح'
+     });
+     e.target.reset();
+ });
+ 
+ // البحث عن الوكلاء
+ document.querySelector('.search-box input').addEventListener('input', (e) => {
+     const searchTerm = e.target.value.toLowerCase();
+     const filtered = agents.filter(agent => 
+         agent.name.toLowerCase().includes(searchTerm) ||
+         agent.specialty.toLowerCase().includes(searchTerm)
+     );
+     renderAgents(filtered);
+ });
+ 
+ // التهيئة الأولية
+ document.addEventListener('DOMContentLoaded', renderAgents);
+ </script>
+ 
+ </body>
+ </html>

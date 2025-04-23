@@ -1,0 +1,67 @@
+ <!--C:\Users\Abbas Satwr\Desktop\مشاريعي\عقاري\properties\properties.html -->
+ <!DOCTYPE html>
+ <html lang="ar" dir="rtl">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Our Home - جميع العقارات</title>
+     
+     <!-- الروابط الخارجية -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+     
+     <!-- ملف الأنماط المخصصة -->
+     <link rel="stylesheet" href="../real_estate.css">
+ </head>
+ <body>
+ 
+     <!-- شريط التنقل -->
+     <nav class="navbar main-nav navbar-expand-lg fixed-top">
+         <div class="container">
+            <a class="navbar-brand nav-brand" href="#">
+                <img src="logo.png"
+                     alt="شعار Our Home"
+                     class="navbar-brand-logo">
+            </a>
+             
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             
+             <div class="collapse navbar-collapse" id="mainNav">
+                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                     <li class="nav-item"><a class="nav-link" href="../index.html">الرئيسية</a></li>
+                     <li class="nav-item"><a class="nav-link active" href="#">العقارات</a></li>
+                     <li class="nav-item"><a class="nav-link" href="../agents/agents.html">الوكلاء</a></li>
+                     <li class="nav-item"><a class="nav-link" href="../about_us/about_us.html">عن الشركة</a></li>
+                 </ul>
+                 <a href="../login/login.html" class="btn btn-primary me-2">تسجيل دخول</a>
+             </div>
+         </div>
+     </nav>
+ 
+     <!-- محتوى الصفحة -->
+     <main class="container mt-5 pt-5">
+         
+         <!-- قائمة العقارات -->
+         <section class="py-5">
+             <h2 class="text-center mb-4">جميع العقارات المتاحة</h2>
+             <div id="propertiesList" class="row g-4">
+                 <!-- العقارات تُضاف هنا ديناميكيًا -->
+             </div>
+         </section>
+ 
+         <!-- الترقيم الصفحي -->
+         <nav aria-label="Page navigation" class="animate-fade">
+             <ul class="pagination justify-content-center">
+                 <!-- أزرار الترقيم تُضاف ديناميكيًا -->
+             </ul>
+         </nav>
+ 
+     </main>
+ 
+     <!-- ملفات السكربت -->
+     <script type="module" src="./properties.js"></script>
+ </body>
+ </html>
